@@ -1,0 +1,13 @@
+  .container__main {
+    /* Take the remaining width */
+    flex: 1;
+    position: relative;
+  
+    /* Make it scrollable */
+    overflow: auto;
+
+    background-color: var(--bodybg);
+
+  }
+
+  
