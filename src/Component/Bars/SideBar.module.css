@@ -136,7 +136,7 @@
   .avatar_link {
     display: block;
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -145,7 +145,6 @@
     .avatar_link {
       position: static;
       transform: translateX(0);
-      margin-top: 50px;
     }
   }
 }
