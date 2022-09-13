@@ -4,8 +4,7 @@ Click here : https://movtime-movie-app.netlify.app/
 
 # Figma design File
 
-Click here: https://pixso.net/app/editor/JUjP0jKQ6u3Cjea8yRA2iQ
-OR : https://www.figma.com/file/4IbpmTU6jtpRKdpbFmt4i8/Web-Design-Movie-Dashboard-(Community)-(Copy)?node-id=1%3A2
+Click here: https://www.figma.com/file/4IbpmTU6jtpRKdpbFmt4i8/Web-Design-Movie-Dashboard-(Community)-(Copy)?node-id=1%3A2
 
 # Getting Started with Create React App
 
