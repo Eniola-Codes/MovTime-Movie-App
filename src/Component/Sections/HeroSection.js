@@ -1,7 +1,9 @@
 import React from "react";
 
+
 const HeroSection = () => {
-  return <>HEROSECTION</>;
+  return <>
+  </>;  
 };
 
 export default HeroSection;

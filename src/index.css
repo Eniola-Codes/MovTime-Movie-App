@@ -23,7 +23,7 @@ body
   position: relative;
   overflow-x: hidden;
   font-family: "Poppins", sans-serif !important;
-  background-color: var(--bodybg);
+  background-color: var(--bodybg) !important;
   color: var(--light) !important;
   font-size: 15px;
 }
@@ -34,7 +34,7 @@ background-color:  var(--selection);
 color: var(--light);
 }
 
-.container {
+.containere {
   display: flex;
 }
 

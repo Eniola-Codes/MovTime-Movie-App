@@ -7,7 +7,7 @@
 
 .aside_container {
   position: fixed;
-  padding: 50px 30px;
+  padding: 30px 30px;
   height: 100vh;
   max-width: 250px;
   width: 30%;
@@ -51,20 +51,19 @@
   transition: 0.3s all;
 }
 
-.sidebar_section ul li a.active::before{
-    background-color: var(--acivelink);
-    content: '';
-    display: block;
-    height: 20px;
-    width: 8px;
-    border-radius: 0 4px 4px 0;
-    position: absolute;
-    left: 0;
-    box-shadow: 0 0 1px var(--acivelink), 0 0 2px var(--acivelink),
+.sidebar_section ul li a.active::before {
+  background-color: var(--acivelink);
+  content: "";
+  display: block;
+  height: 20px;
+  width: 8px;
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  left: 0;
+  box-shadow: 0 0 1px var(--acivelink), 0 0 2px var(--acivelink),
     0 0 4px var(--acivelink), 0 0 8px var(--acivelink),
     0 0 16px var(--acivelink), 0 0 24px var(--acivelink);
-  }
-  
+}
 
 .sidebar_section ul li a:hover {
   color: var(--light);
@@ -77,6 +76,19 @@
 
 .sidebar_section ul li a span {
   margin-left: 10px;
+}
+
+.tooltip {
+  display: none !important;
+  font-family: "Poppins", "sans-serif" !important;
+}
+
+.flexible_icon {
+  display: none;
+}
+
+.nav_avatar {
+  width: 36px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -106,12 +118,34 @@
     margin-top: 15px;
   }
 
-  .sidebar_section ul li a.active::before{
+  .sidebar_section ul li a.active::before {
     width: 5px;
-    transform: translateY(6px);
-    box-shadow: 0 0 1px var(--acivelink), 0 0 2px var(--acivelink),
-    0 0 4px var(--acivelink), 0 0 8px var(--acivelink),
-    0 0 16px var(--acivelink), 0 0 24px var(--acivelink);
+    transform: translateY(7px);
   }
 
+  .tooltip {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .flexible_icon {
+    display: block;
+  }
+
+  .avatar_link {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media only screen and (max-height: 700px) {
+    .avatar_link {
+      position: static;
+      transform: translateX(0);
+      margin-top: 50px;
+    }
+  }
 }
