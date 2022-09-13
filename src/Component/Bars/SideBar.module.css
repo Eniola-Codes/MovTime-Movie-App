@@ -141,7 +141,7 @@
     transform: translateX(-50%);
   }
 
-  @media only screen and (max-height: 700px) {
+  @media only screen and (max-height: 699px) {
     .avatar_link {
       position: static;
       transform: translateX(0);
