@@ -10,7 +10,9 @@ const NavBar = () => {
   return (
     <Navbar className={`${classes.navbar}`}>
       <Nav className={`${classes.nav_linkgroup}`}>
-        <Nav.Link className={`${classes.nav_link}`}>Movies</Nav.Link>
+        <Nav.Link className={`${classes.nav_link} ${classes.active}`}>
+          Movies
+        </Nav.Link>
         <Nav.Link className={`${classes.nav_link}`}>Kids</Nav.Link>
         <Nav.Link className={`${classes.nav_link}`}>Games</Nav.Link>
       </Nav>
@@ -22,9 +24,15 @@ const NavBar = () => {
           <img src={notify} alt="notification bing"></img>
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ms-3`}>
-          <img src={avatar1} className={classes.nav_avatar} alt="notification bing"></img>
+          <img
+            src={avatar1}
+            className={classes.nav_avatar}
+            alt="notification bing"
+          ></img>
         </Nav.Link>
-        <Nav.Link className={`${classes.nav_link} ${classes.nav_name}`}>Eniola Codes</Nav.Link>
+        <Nav.Link className={`${classes.nav_link} ${classes.nav_name}`}>
+          Eniola Codes
+        </Nav.Link>
       </Nav>
     </Navbar>
   );

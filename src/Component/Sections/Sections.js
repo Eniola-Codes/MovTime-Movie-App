@@ -6,8 +6,10 @@ import NavBar from "../Bars/NavBar";
 const Section = () => {
   return (
     <main class={classes.container_main}>
-      <NavBar/>
-      <HeroSection />
+      <NavBar />
+      <div className={classes.content_div}>
+        <HeroSection />
+      </div>
     </main>
   );
 };

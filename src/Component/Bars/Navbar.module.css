@@ -5,8 +5,12 @@
 }
 
 .navbar .nav_link {
-  color: var(--sidebarlink);
+  color: var(--light);
   transition: 0.3s;
+}
+
+.navbar .nav_link.active {
+  color: var(--acivelink);
 }
 
 .navbar .nav_link:hover {

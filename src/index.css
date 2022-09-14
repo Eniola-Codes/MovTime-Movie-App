@@ -1,25 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*
-{
+* {
   margin: 0;
-  padding:0;
+  padding: 0;
   box-sizing: border-box;
   /* border:1px solid red; */
 }
 
-:root{
-  --light : #FFFFFF;
-  --sidebarbg : #21201E;
-  --bodybg : #191817;
-  --sidebarlink: #D0D0D0;
-  --sidebartext: #A4A4A4;
-  --selection: #C3232B;
-  --acivelink: #F8242E;
+:root {
+  --light: #ffffff;
+  --sidebarbg: #21201e;
+  --bodybg: #191817;
+  --sidebarlink: #d0d0d0;
+  --sidebartext: #a4a4a4;
+  --selection: #c3232b;
+  --acivelink: #f8242e;
 }
 
-body
-{
+body {
   position: relative;
   overflow-x: hidden;
   font-family: "Poppins", sans-serif !important;
@@ -28,24 +26,20 @@ body
   font-size: 15px;
 }
 
-::selection
-{
-background-color:  var(--selection);
-color: var(--light);
+::selection {
+  background-color: var(--selection);
+  color: var(--light);
 }
 
 .containere {
   display: flex;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 5px;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background-color: #555555;
   border-radius: 5px;
 }
-

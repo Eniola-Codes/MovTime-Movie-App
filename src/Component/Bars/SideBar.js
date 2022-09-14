@@ -207,7 +207,11 @@ const SideBar = () => {
                     delay={{ show: 100, hide: 200 }}
                     overlay={renderTooltipLogout}
                   >
-                    <img src={avatar1} className={classes.nav_avatar} alt="logo text"></img>
+                    <img
+                      src={avatar1}
+                      className={classes.nav_avatar}
+                      alt="logo text"
+                    ></img>
                   </OverlayTrigger>
                   <span className={classes.small_screen}>Myself</span>
                 </a>
