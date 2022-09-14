@@ -14,7 +14,7 @@
 }
 
 .navbar .nav_link:hover {
-  color: var(--light);
+  color: var(--acivelink);
 }
 
 .nav_linkgroup {
