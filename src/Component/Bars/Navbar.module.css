@@ -1,6 +1,7 @@
 .navbar {
   padding-top: 30px;
   position: absolute;
+  z-index: 10;
   width: calc(100% - 250px);
 }
 

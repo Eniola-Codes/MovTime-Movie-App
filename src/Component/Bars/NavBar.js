@@ -27,7 +27,7 @@ const NavBar = () => {
           <img
             src={avatar1}
             className={classes.nav_avatar}
-            alt="notification bing"
+            alt="Avatar"
           ></img>
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ${classes.nav_name}`}>

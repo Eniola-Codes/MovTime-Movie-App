@@ -120,7 +120,7 @@
 
   .sidebar_section ul li a.active::before {
     width: 5px;
-    transform: translateY(7px);
+    transform: translateY(8px);
   }
 
   .tooltip {

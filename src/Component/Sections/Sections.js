@@ -5,7 +5,7 @@ import NavBar from "../Bars/NavBar";
 
 const Section = () => {
   return (
-    <main class={classes.container_main}>
+    <main className={classes.container_main}>
       <NavBar />
       <div className={classes.content_div}>
         <HeroSection />
