@@ -31,10 +31,10 @@ const HeroSectionComponent = ({
   movieGenre.map((movie) => {
     for (let x = 0; x < movieGenre.length; x++) {
       if (movie.id === genre_ids[x]) {
-       return genre_ids[x] = movie.name;
+        return (genre_ids[x] = { key: movie.id, name: movie.name });
       }
     }
-    return '';
+    return "";
   });
   return (
     <>
@@ -49,11 +49,8 @@ const HeroSectionComponent = ({
         <p className={classes.title}>{title}</p>
 
         {genre_ids.map((movie) => (
-          <span>{movie}</span>
+          <span>{movie.name}</span>
         ))}
-        {/* <p>{overview}</p> */}
-        {/* <p>{release_date}</p>
-          <p>{vote_average}</p> */}
       </div>
     </>
   );
