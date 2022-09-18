@@ -87,4 +87,8 @@ background-color: var(--selection);
     width: 150px;
 }
 
+.overlay{
+    background: linear-gradient(360deg, rgb(0, 0, 0,0.9) 0%, transparent 50%);
+}
+
 }
