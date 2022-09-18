@@ -65,7 +65,7 @@ background-color: var(--selection);
 {
 
     .overlay{
-        background: linear-gradient(90deg, rgb(0, 0, 0,0.95) 10%, transparent 100%);
+        background:  linear-gradient(360deg, rgb(0, 0, 0,0.9) 0%, transparent 50%) !important;
     }    
 
     .backdrop_text{
@@ -87,8 +87,5 @@ background-color: var(--selection);
     width: 150px;
 }
 
-.overlay{
-    background: linear-gradient(360deg, rgb(0, 0, 0,0.9) 0%, transparent 50%);
-}
 
 }
