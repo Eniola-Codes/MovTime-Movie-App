@@ -133,18 +133,4 @@
     display: block;
   }
 
-  .avatar_link {
-    display: block;
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  @media only screen and (max-height: 701px) {
-    .avatar_link {
-      position: static;
-      transform: translateX(0);
-    }
-  }
 }

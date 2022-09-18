@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./HeroSectionComponent.module.css";
+import playImage from '../../../Assets/Icons/bold_video_circle.svg'
 
 // const API_IMGW500="https://image.tmdb.org/t/p/w500/";
 const API_IMG = "https://image.tmdb.org/t/p/original/";
@@ -7,12 +8,8 @@ const API_GENRE =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=63963159dae94bf1e30a674eee861084";
 
 const HeroSectionComponent = ({
-  poster_path,
   backdrop_path,
   title,
-  overview,
-  release_date,
-  vote_average,
   genre_ids,
 }) => {
   const [movieGenre, setMovieGenre] = useState([]);
@@ -47,12 +44,16 @@ const HeroSectionComponent = ({
       </div>
       <div className={classes.backdrop_text}>
         <p className={classes.title}>{title}</p>
-
         {genre_ids.map((movie) => (
-          <span>{movie.name}</span>
+          <span className={classes.movie_genre}>{movie.name}</span>
         ))}
+        <div className={classes.action}>
+          <button type="button">Watch <img src={playImage} alt='play'></img></button>
+        </div>
       </div>
-    </>
+      <div className={classes.overlay}>
+          </div>
+      </>
   );
 };
 

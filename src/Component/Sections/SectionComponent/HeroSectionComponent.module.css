@@ -10,14 +10,81 @@
 
 .backdrop_text{
     position: absolute;
-    margin-left: 40px;
+    margin-left: 50px;
     z-index: 20;
-    top: 40%;
+    top: 55%;
     transform: translateY(-50%);
-    width: 50%;
+    width: 60%;
 }
 
 .backdrop_text .title{
     font-size: 42px;
     font-weight: 600;
+}
+
+.movie_genre
+{
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255,0.3);
+    padding: 5px 20px ;
+    border-radius: 30px ;
+    font-size: 13px;
+    background: linear-gradient(45deg, rgba(255, 255, 255,0.1) 20%, rgba(255, 255, 255,0) 50%);
+    backdrop-filter: blur(15px);
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.action button
+{
+    border: none;
+    width: 170px;
+    margin-top: 30px;
+    padding: 10px 0;
+    border-radius: 40px;
+    word-spacing: 10px;
+    background-color: var(--acivelink);
+    color: var(--light);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.action button:hover
+{
+background-color: var(--selection);
+}
+.overlay{
+    background: linear-gradient(90deg, rgb(0, 0, 0,0.9) 10%, transparent 80%), linear-gradient(360deg, rgb(0, 0, 0,0.9) 0%, transparent 50%);
+    position: relative;
+    z-index: 10;
+    height: 500px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px)
+{
+
+    .overlay{
+        background: linear-gradient(90deg, rgb(0, 0, 0,0.95) 10%, transparent 100%);
+    }    
+
+    .backdrop_text{
+        margin: auto;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        width: 90%;
+        text-align: center;
+    }
+    
+    .backdrop_text .title{
+        font-size: 28px;
+        font-weight: 500;
+    }
+    
+    .action button
+{
+    width: 150px;
+}
+
 }
