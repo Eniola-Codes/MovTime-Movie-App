@@ -94,7 +94,9 @@ const HeroSection = () => {
     );
   }
 
-  return <>{content}</>;
+  return <section>
+  {content}
+  </section>;
 };
 
 export default HeroSection;
