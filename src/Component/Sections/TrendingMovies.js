@@ -30,8 +30,18 @@ const TrendingMovies = () => {
         }
 
         const data = await response.json();
-        setMovies(data.results);
+
+        function shuffleArray(arr)
+        {
+         return arr.sort(() => Math.random() - 0.5);
+        }
+
+        const dataResult = shuffleArray(data.results);
+
+        setMovies(dataResult);
+        
         setIsLoading(false);
+
       } catch (error) {
         setError(error.message);
       }

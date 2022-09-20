@@ -1,0 +1,60 @@
+.poster_image
+{
+    width: 100%;
+    height: auto; 
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.poster_text{
+    position: absolute;
+    z-index: 20;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: rgba(33, 32, 30, 0.16);
+    backdrop-filter: blur(54px);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.poster_text .title{
+    font-weight: 500;
+    display:block;
+}
+
+.poster_text .movie_info{
+    font-weight: 300;
+    color: rgb(208, 208, 208);
+}
+
+.action button
+{
+    border: none;
+    width: 170px;
+    margin-top: 30px;
+    padding: 10px 0;
+    border-radius: 40px;
+    word-spacing: 10px;
+    background-color: var(--acivelink);
+    color: var(--light);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.action button:hover
+{
+background-color: var(--selection);
+}
+
+
+@media only screen and (max-width: 576px)
+{
+    .poster_text .title,
+    .poster_text .movie_info
+    {
+        font-size: 14px;
+    }    
+    
+}

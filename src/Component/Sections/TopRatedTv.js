@@ -1,36 +1,35 @@
 import React, { useEffect, useState, useRef } from "react";
-import HeroSectionComponent from "./SectionComponent/HeroSectionComponent";
-import classes from "./HeroSection.module.css";
+import PopularTvComponent from "./SectionComponent/PopularTvComponent";
+import classes from "./PopularTv.module.css";
+import spinner from "../../Assets/Icons/spinner.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation, EffectFade } from "swiper";
+import { Navigation } from "swiper";
 import { Autoplay } from "swiper";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import spinner from "../../Assets/Icons/spinner.svg";
 
-const API_POPULAR_MOVIES =
-  "https://api.themoviedb.org/3/movie/popular?api_key=63963159dae94bf1e30a674eee861084";
+const API_LATEST_MOVIES =
+  "https://api.themoviedb.org/3/tv/top_rated?api_key=63963159dae94bf1e30a674eee861084";
 
-const HeroSection = () => {
+const PopularTv = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-      const fetchmoviesHandler = async () => {
-        setIsLoading(true);
-        setError(null);    
-        try {
-        const response = await fetch(API_POPULAR_MOVIES);
+    const fetchmoviesHandler = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(API_LATEST_MOVIES);
 
         if (!response.ok) {
           throw new Error("Something went wrong");
         }
 
         const data = await response.json();
-
 
         function shuffleArray(arr)
         {
@@ -40,16 +39,15 @@ const HeroSection = () => {
         const dataResult = shuffleArray(data.results);
 
         setMovies(dataResult);
-
-
+        
         setIsLoading(false);
-      }    
-    catch (error) {
-      setError(error.message);
-    }
-    setIsLoading(false);
-  }
-      fetchmoviesHandler();
+
+      } catch (error) {
+        setError(error.message);
+      }
+      setIsLoading(false);
+    };
+    fetchmoviesHandler();
   }, []);
 
   const swiperNavPrevRef = useRef(null);
@@ -60,13 +58,43 @@ const HeroSection = () => {
   if (!isLoading & !error) {
     content = (
       <Swiper
-        modules={[Navigation, EffectFade, Autoplay]}
+        modules={[Navigation, Autoplay]}
         navigation={{
           prevEl: swiperNavPrevRef.current,
           nextEl: swiperNavNextRef.current,
         }}
-        effect={"fade"}
         speed={800}
+        slidesPerView={4}
+        breakpoints={{
+          1900: {
+            slidesPerView: 6,
+            spaceBetween: 30,
+          },
+          1600: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          991: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          576: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          }
+        }}
         loop
         autoplay={{ delay: 5000 }}
         className={classes.myswiper}
@@ -79,12 +107,9 @@ const HeroSection = () => {
       >
         {movies.map((movieDetails) => (
           <SwiperSlide className={classes.swiperslide}>
-            <HeroSectionComponent key={movieDetails.id} {...movieDetails} />
+            <PopularTvComponent key={movieDetails.id} {...movieDetails} />
           </SwiperSlide>
         ))}
-        {/* <div className={classes.swipernavprev} ref={swiperNavPrevRef}></div>
-<div className={classes.swipernavnext} ref={swiperNavNextRef}></div>
-*/}
       </Swiper>
     );
   }
@@ -92,8 +117,8 @@ const HeroSection = () => {
   if (!isLoading && error) {
     content = (
       <div className={classes.error_div}>
-      <p className={classes.error}>{error}</p>
-    </div>
+        <p className={classes.error}>{error}</p>
+      </div>
     );
   }
 
@@ -105,9 +130,14 @@ const HeroSection = () => {
     );
   }
 
-  return <section>
-  {content}
-  </section>;
+  return (
+    <>
+      <section className={classes.trending_movies}>
+        <h4 className={classes.trending_movies_header}>Top Rated Series</h4>
+        {content}
+      </section>
+    </>
+  );
 };
 
-export default HeroSection;
+export default PopularTv;
