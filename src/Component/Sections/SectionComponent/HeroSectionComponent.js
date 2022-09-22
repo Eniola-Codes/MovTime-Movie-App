@@ -1,57 +1,41 @@
-import React, { useEffect, useState } from "react";
-import classes from "./HeroSectionComponent.module.css";
+import React from "react";
+import classes from "../../../styles/HeroSectionComponent.module.css";
 import playImage from "../../../Assets/Icons/bold_video_circle.svg";
-import spinner from '../../../Assets/Icons/spinner-small.svg'
+import spinner from "../../../Assets/Icons/spinner-small.svg";
+import useMovieComponent from "../../../hooks/moviecomponent-hook";
 
+//The images Api
 const API_IMG = "https://image.tmdb.org/t/p/original/";
+
+//The Genre Api
 const API_GENRE =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=63963159dae94bf1e30a674eee861084";
 
-const HeroSectionComponent = ({ backdrop_path, title, genre_ids }) => {
-  const [movieGenre, setMovieGenre] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+const HeroSectionComponent = ({
+  backdrop_path,
+  title,
+  genre_ids,
+  release_date,
+}) => {
 
-  useEffect(() => {
-    const fetchMoviesGenres = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await fetch(API_GENRE);
+    //Using a custom hook to extract my logic values
+  const { isLoading, error } = useMovieComponent(
+    API_GENRE,
+    genre_ids,
+    release_date
+  );
 
-        if (!response.ok) {
-          throw new Error("Something went wrong!");
-        }
-
-        const data = await response.json();
-
-        setMovieGenre(data.genres);
-      } catch (error) {
-        setError(error.message);
-      }
-      setIsLoading(false);
-    };
-
-    fetchMoviesGenres();
-  }, []);
-
-  movieGenre.map((movie) => {
-    for (let x = 0; x < movieGenre.length; x++) {
-      if (movie.id === genre_ids[x]) {
-        return (genre_ids[x] = { key: movie.id, name: movie.name });
-      }
-    }
-    return "";
-  });
-
+      //The genre content variablke 
   let genre_content;
 
+    //Conditional logic to render content
   if (!isLoading && !error) {
     genre_content = genre_ids.map((movie) => (
       <span className={classes.movie_genre}>{movie.name}</span>
     ));
   }
 
+    //Conditional logic to render content
   if (!isLoading && error) {
     genre_content = (
       <div className={classes.error_div}>
@@ -60,6 +44,7 @@ const HeroSectionComponent = ({ backdrop_path, title, genre_ids }) => {
     );
   }
 
+    //Conditional logic to render content
   if (isLoading) {
     genre_content = (
       <div className={classes.loader_div}>
@@ -68,7 +53,7 @@ const HeroSectionComponent = ({ backdrop_path, title, genre_ids }) => {
     );
   }
 
-
+  //layout and structure the section
   return (
     <>
       <div>
@@ -80,7 +65,7 @@ const HeroSectionComponent = ({ backdrop_path, title, genre_ids }) => {
       </div>
       <div className={classes.backdrop_text}>
         <p className={classes.title}>{title}</p>
-       {genre_content}
+        {genre_content}
         <div className={classes.action}>
           <button type="button">
             Watch <img src={playImage} alt="play"></img>

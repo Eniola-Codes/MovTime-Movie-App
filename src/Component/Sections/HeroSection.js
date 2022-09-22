@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import HeroSectionComponent from "./SectionComponent/HeroSectionComponent";
-import classes from "./HeroSection.module.css";
+import classes from "../../styles/HeroSection.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation, EffectFade } from "swiper";
@@ -9,54 +9,21 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import spinner from "../../Assets/Icons/spinner.svg";
+import useMoviesTv from "../../hooks/moviestv-hook";
 
+//The popular movies Api
 const API_POPULAR_MOVIES =
   "https://api.themoviedb.org/3/movie/popular?api_key=63963159dae94bf1e30a674eee861084";
 
 const HeroSection = () => {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  //Using a custom hook to extract my logic values
+  const { movies, isLoading, error, swiperNavPrevRef, swiperNavNextRef } =
+    useMoviesTv(API_POPULAR_MOVIES);
 
-  useEffect(() => {
-      const fetchmoviesHandler = async () => {
-        setIsLoading(true);
-        setError(null);    
-        try {
-        const response = await fetch(API_POPULAR_MOVIES);
-
-        if (!response.ok) {
-          throw new Error("Something went wrong");
-        }
-
-        const data = await response.json();
-
-
-        function shuffleArray(arr)
-        {
-         return arr.sort(() => Math.random() - 0.5);
-        }
-
-        const dataResult = shuffleArray(data.results);
-
-        setMovies(dataResult);
-
-
-        setIsLoading(false);
-      }    
-    catch (error) {
-      setError(error.message);
-    }
-    setIsLoading(false);
-  }
-      fetchmoviesHandler();
-  }, []);
-
-  const swiperNavPrevRef = useRef(null);
-  const swiperNavNextRef = useRef(null);
-
+  //The content variablke
   let content;
 
+  //Conditional logic to render content
   if (!isLoading & !error) {
     content = (
       <Swiper
@@ -77,26 +44,26 @@ const HeroSection = () => {
           swiper.navigation.update();
         }}
       >
+        {/* mapping and displaying the section components which contains the layout */}
         {movies.map((movieDetails) => (
           <SwiperSlide className={classes.swiperslide}>
             <HeroSectionComponent key={movieDetails.id} {...movieDetails} />
           </SwiperSlide>
         ))}
-        {/* <div className={classes.swipernavprev} ref={swiperNavPrevRef}></div>
-<div className={classes.swipernavnext} ref={swiperNavNextRef}></div>
-*/}
       </Swiper>
     );
   }
 
+  //Conditional logic to render content
   if (!isLoading && error) {
     content = (
       <div className={classes.error_div}>
-      <p className={classes.error}>{error}</p>
-    </div>
+        <p className={classes.error}>{error}</p>
+      </div>
     );
   }
 
+  //Conditional logic to render content
   if (isLoading) {
     content = (
       <div className={classes.loader_div}>
@@ -105,9 +72,8 @@ const HeroSection = () => {
     );
   }
 
-  return <section>
-  {content}
-  </section>;
+  //rendering the content
+  return <section>{content}</section>;
 };
 
 export default HeroSection;

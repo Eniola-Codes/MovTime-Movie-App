@@ -10,12 +10,12 @@
 }
 
 
-.trending_movies
+.style_movies
 {
     padding: 20px 30px;
 }
 
-.trending_movies_header
+.style_movies_header
 {
     padding: 5px 0px;
 }
@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 991px)
 {
-    .trending_movies
+    .style_movies
     {
         padding: 20px 20px;
     }   
@@ -54,7 +54,7 @@
 
 @media only screen and (max-width: 768px)
 {
-    .trending_movies
+    .style_movies
     {
         padding: 20px 15px;
     }   

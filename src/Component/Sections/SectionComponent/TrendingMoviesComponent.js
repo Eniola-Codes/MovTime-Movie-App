@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from "react";
-import classes from "./TrendingMoviesComponent.module.css";
+import React from "react";
+import classes from "../../../styles/MovieSectionComponentStyles.module.css";
+import useMovieComponent from "../../../hooks/moviecomponent-hook";
 
+//The images Api
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
+
+//The Genre Api
 const API_GENRE =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=63963159dae94bf1e30a674eee861084";
+
 
 const TrendingMoviesComponent = ({
   poster_path,
@@ -11,27 +16,11 @@ const TrendingMoviesComponent = ({
   genre_ids,
   release_date,
 }) => {
-  const [movieGenre, setMovieGenre] = useState([]);
-  useEffect(() => {
-    const fetchMoviesGenres = async () => {
-      const response = await fetch(API_GENRE);
-      const data = await response.json();
 
-      setMovieGenre(data.genres);
-    };
-    fetchMoviesGenres();
-  }, []);
-  movieGenre.map((movie) => {
-    for (let x = 0; x < 1; x++) {
-      if (movie.id === genre_ids[x]) {
-        return (genre_ids[x] = { key: movie.id, name: movie.name });
-      }
-    }
-    return "";
-  });
+    //Using a custom hook to extract my logic values
+  const {releaseDate} = useMovieComponent(API_GENRE,genre_ids,release_date)
 
-  const releaseDate = release_date.slice(0,4);
-
+      //layout and structure the section
   return (
     <>
       <div>
@@ -39,6 +28,7 @@ const TrendingMoviesComponent = ({
           src={API_IMG + poster_path}
           className={classes.poster_image}
           alt="Trending movies"
+          loading="lazy"
         ></img>
       </div>
         <div className={classes.poster_text}>

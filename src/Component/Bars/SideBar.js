@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./SideBar.module.css";
+import classes from "../../styles/SideBar.module.css";
 import LogoText from "../../Assets/Logo/LogoText.svg";
 import Logo from "../../Assets/Logo/Logo.svg";
 import comingSoon from "../../Assets/Icons/calendar.svg";
@@ -16,53 +16,56 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SideBar = () => {
+
+  //Tooltip functions
   const renderTooltipBrowse = (props) => (
     <Tooltip id="button-browse" className={classes.tooltip} {...props}>
       Browse
     </Tooltip>
   );
   const renderTooltipWatch = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-watchList" className={classes.tooltip} {...props}>
       Watchlist
     </Tooltip>
   );
   const renderTooltipComing = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Soon" className={classes.tooltip} {...props}>
       Coming soon
     </Tooltip>
   );
   const renderTooltipFriends = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Friends" className={classes.tooltip} {...props}>
       Friends
     </Tooltip>
   );
   const renderTooltipParties = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Parties" className={classes.tooltip} {...props}>
       Parties
     </Tooltip>
   );
   const renderTooltipSettings = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Settings" className={classes.tooltip} {...props}>
       Settings
     </Tooltip>
   );
   const renderTooltipLogout = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Log" className={classes.tooltip} {...props}>
       Log in/out
     </Tooltip>
   );
   const renderTooltipSearch = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Search" className={classes.tooltip} {...props}>
       Search
     </Tooltip>
   );
   const renderTooltipNotify = (props) => (
-    <Tooltip id="button-browse" className={classes.tooltip} {...props}>
+    <Tooltip id="button-Notify" className={classes.tooltip} {...props}>
       Notification
     </Tooltip>
   );
 
   return (
+      //Rendering the Sidebar
     <aside className={classes.container__sidebar}>
       <div className={classes.aside_container}>
         <div className={classes.logo_div}>

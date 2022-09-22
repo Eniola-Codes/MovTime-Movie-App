@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import TopRatedMoviesComponent from "./SectionComponent/TopRatedMoviesComponent";
-import classes from "./TopRatedMovies.module.css";
+import classes from "../../styles/MovieTvSliderStyles.module.css";
 import spinner from "../../Assets/Icons/spinner.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,55 +9,24 @@ import { Autoplay } from "swiper";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import useMoviesTv from "../../hooks/moviestv-hook";
 
-const API_LATEST_MOVIES =
+//The Top Rated Api
+const API_TOPRATED_MOVIES =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=63963159dae94bf1e30a674eee861084";
 
 const TopRatedMovies = () => {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  //Using a custom hook to extract my logic values
+  const { movies, isLoading, error, swiperNavPrevRef, swiperNavNextRef } =
+    useMoviesTv(API_TOPRATED_MOVIES);
 
-  useEffect(() => {
-    const fetchmoviesHandler = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await fetch(API_LATEST_MOVIES);
-
-        if (!response.ok) {
-          throw new Error("Something went wrong");
-        }
-
-        const data = await response.json();
-
-
-        function shuffleArray(arr)
-        {
-         return arr.sort(() => Math.random() - 0.5);
-        }
-
-        const dataResult = shuffleArray(data.results);
-
-        setMovies(dataResult);
-
-
-        setIsLoading(false);
-      } catch (error) {
-        setError(error.message);
-      }
-      setIsLoading(false);
-    };
-    fetchmoviesHandler();
-  }, []);
-
-  const swiperNavPrevRef = useRef(null);
-  const swiperNavNextRef = useRef(null);
-
+  //The content variablke
   let content;
 
+  //Conditional logic to render content
   if (!isLoading & !error) {
     content = (
+      //Using swiper js library
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation={{
@@ -94,7 +63,7 @@ const TopRatedMovies = () => {
           0: {
             slidesPerView: 2,
             spaceBetween: 15,
-          }
+          },
         }}
         loop
         autoplay={{ delay: 5000 }}
@@ -106,6 +75,7 @@ const TopRatedMovies = () => {
           swiper.navigation.update();
         }}
       >
+        {/* mapping and displaying the section components which contains the layout */}
         {movies.map((movieDetails) => (
           <SwiperSlide className={classes.swiperslide}>
             <TopRatedMoviesComponent key={movieDetails.id} {...movieDetails} />
@@ -115,6 +85,7 @@ const TopRatedMovies = () => {
     );
   }
 
+  //Conditional logic to render content
   if (!isLoading && error) {
     content = (
       <div className={classes.error_div}>
@@ -123,6 +94,7 @@ const TopRatedMovies = () => {
     );
   }
 
+  //Conditional logic to render content
   if (isLoading) {
     content = (
       <div className={classes.loader_div}>
@@ -131,10 +103,11 @@ const TopRatedMovies = () => {
     );
   }
 
+  //rendering the content
   return (
     <>
-      <section className={classes.TopRated_movies}>
-        <h4 className={classes.TopRated_movies_header}>Top Rated Movies</h4>
+      <section className={classes.style_movies}>
+        <h4 className={classes.style_movies_header}>Top Rated Movies</h4>
         {content}
       </section>
     </>

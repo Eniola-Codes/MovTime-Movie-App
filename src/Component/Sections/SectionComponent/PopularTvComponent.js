@@ -1,6 +1,8 @@
 import React from "react";
-import classes from "./PopularTvComponent.module.css";
+import classes from "../../../styles/MovieSectionComponentStyles.module.css";
+import useMovieComponent from "../../../hooks/moviecomponent-hook";
 
+//The images Api
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
 const PopularTvComponent = ({
@@ -10,8 +12,10 @@ const PopularTvComponent = ({
   first_air_date,
 }) => {
 
-  const releaseDate = first_air_date.slice(0,4);
+    //Using a custom hook to extract my logic values
+  const {releaseDate} = useMovieComponent(null,null,first_air_date)
 
+    //layout and structure the section
   return (
     <>
       <div>
@@ -19,6 +23,7 @@ const PopularTvComponent = ({
           src={API_IMG + poster_path}
           className={classes.poster_image}
           alt="Trending movies"
+          loading="lazy"
         ></img>
       </div>
         <div className={classes.poster_text}>

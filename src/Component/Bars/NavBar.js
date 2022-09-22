@@ -1,12 +1,13 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import classes from "./Navbar.module.css";
+import classes from "../../styles/Navbar.module.css";
 import notify from "../../Assets/Icons/notification-bing.svg";
 import search from "../../Assets/Icons/search-icon.svg";
 import avatar1 from "../../Assets/Avatars/avataaars(1).svg";
 
 const NavBar = () => {
+  //Rendering the Navbar
   return (
     <Navbar className={`${classes.navbar}`}>
       <Nav className={`${classes.nav_linkgroup}`}>
@@ -24,11 +25,7 @@ const NavBar = () => {
           <img src={notify} alt="notification bing"></img>
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ms-3`}>
-          <img
-            src={avatar1}
-            className={classes.nav_avatar}
-            alt="Avatar"
-          ></img>
+          <img src={avatar1} className={classes.nav_avatar} alt="Avatar"></img>
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ${classes.nav_name}`}>
           Eniola Codes
