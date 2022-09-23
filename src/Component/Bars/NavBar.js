@@ -7,6 +7,13 @@ import search from "../../Assets/Icons/search-icon.svg";
 import avatar1 from "../../Assets/Avatars/avataaars(1).svg";
 
 const NavBar = () => {
+
+
+    const onKidsHandler = () =>
+    {
+      
+    }
+
   //Rendering the Navbar
   return (
     <Navbar className={`${classes.navbar}`}>
@@ -14,8 +21,8 @@ const NavBar = () => {
         <Nav.Link className={`${classes.nav_link} ${classes.active}`}>
           Movies
         </Nav.Link>
-        <Nav.Link className={`${classes.nav_link}`}>Kids</Nav.Link>
-        <Nav.Link className={`${classes.nav_link}`}>Games</Nav.Link>
+        <Nav.Link className={`${classes.nav_link}`} onClick={onKidsHandler}>Kids</Nav.Link>
+        <Nav.Link className={`${classes.nav_link}`}>Series</Nav.Link>
       </Nav>
       <Nav className={`${classes.nav_linkgroup_2}`}>
         <Nav.Link className={`${classes.nav_link}`}>

@@ -41,7 +41,6 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
 
   //Mapping through the movie Genres and putting the id'swith the sp
   movieGenre.map((movie) => {
-    movie.id = { id: movie.id, key: movie.id };
     for (let x = 0; x < movieGenre.length; x++) {
       if (movie.id === genre_ids[x]) {
         return (genre_ids[x] = { key: movie.id, name: movie.name });

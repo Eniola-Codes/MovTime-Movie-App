@@ -37,6 +37,7 @@
   width: 40px;
 }
 
+
 @media only screen and (max-width: 991px) {
   .nav_name {
     display: none;
