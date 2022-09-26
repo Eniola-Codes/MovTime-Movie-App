@@ -23,7 +23,6 @@ const PopularTvComponent = ({
           src={API_IMG + poster_path}
           className={classes.poster_image}
           alt="Trending movies"
-          loading="lazy"
         ></img>
       </div>
         <div className={classes.poster_text}>

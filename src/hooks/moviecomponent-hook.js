@@ -17,7 +17,7 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
         //fetching the movie genre
         const response = await fetch(API_LINK_GENRE);
 
-        //checking if the response is Ok
+        //checking if` the response is Ok
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -43,7 +43,7 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
   movieGenre.map((movie) => {
     for (let x = 0; x < movieGenre.length; x++) {
       if (movie.id === genre_ids[x]) {
-        return (genre_ids[x] = { key: movie.id, name: movie.name });
+        return (genre_ids[x] = { id: movie.id, name: movie.name });
       }
     }
     return "";

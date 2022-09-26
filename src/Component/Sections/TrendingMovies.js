@@ -77,7 +77,7 @@ const TrendingMovies = () => {
       >
         {/* mapping and displaying the section components which contains the layout */}
         {movies.map((movieDetails) => (
-          <SwiperSlide className={classes.swiperslide}>
+          <SwiperSlide className={classes.swiperslide} key={movieDetails.id}>
             <TrendingMoviesComponent key={movieDetails.id} {...movieDetails} />
           </SwiperSlide>
         ))}

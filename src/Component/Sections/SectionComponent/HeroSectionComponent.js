@@ -31,7 +31,7 @@ const HeroSectionComponent = ({
     //Conditional logic to render content
   if (!isLoading && !error) {
     genre_content = genre_ids.map((movie) => (
-      <span className={classes.movie_genre}>{movie.name}</span>
+      <span className={classes.movie_genre} key={Math.random()}>{movie.name}</span>
     ));
   }
 

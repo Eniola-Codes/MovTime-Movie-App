@@ -20,7 +20,7 @@ const PopularMovies = () => {
   const { movies, isLoading, error, swiperNavPrevRef, swiperNavNextRef } =
     useMoviesTv(API_POPULAR_MOVIES);
 
-  //The content variablke
+  //The content varialke
   let content;
 
   //Conditional logic to render content
@@ -77,7 +77,7 @@ const PopularMovies = () => {
       >
         {/* mapping and displaying the section components which contains the layout */}
         {movies.map((movieDetails) => (
-          <SwiperSlide className={classes.swiperslide}>
+          <SwiperSlide className={classes.swiperslide} key={movieDetails.id}>
             <PopularMoviesComponent key={movieDetails.id} {...movieDetails} />
           </SwiperSlide>
         ))}

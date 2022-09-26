@@ -65,3 +65,12 @@ const useMoviesTv = (API_LINK) => {
 };
 
 export default useMoviesTv;
+
+
+
+
+
+
+
+
+
