@@ -31,8 +31,14 @@ body {
   color: var(--light);
 }
 
-.containere {
+.container_content {
   display: flex;
+}
+
+.container__main {
+  flex: 1;
+
+  overflow: auto;
 }
 
 ::-webkit-scrollbar {
@@ -42,4 +48,16 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #555555;
   border-radius: 5px;
+}
+
+.content_div {
+  width: calc(100vw - 250px);
+  overflow-wrap: break-word;
+  padding-left: 0px;
+}
+
+@media only screen and (max-width: 991px) {
+  .content_div {
+    width: calc(100vw - 60px);
+  }
 }

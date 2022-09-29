@@ -7,6 +7,7 @@
 {
     width: 100%;
     transform: translateZ(0);
+    overflow:visible;
 }
 
 
@@ -42,6 +43,7 @@
     color : var(--acivelink);
     text-transform: uppercase;
 }
+
 
 @media only screen and (max-width: 991px)
 {

@@ -1,12 +1,16 @@
 import React from "react";
 import SideBar from "./Component/Bars/SideBar";
-import Sections from "./Component/Sections/Sections";
+import Browse from "./pages/Browse.js";
+import NavBar from "./Component/Bars/NavBar";
 
 const App = () => {
   return (
-    <div className="containere">
+    <div className="container_content">
       <SideBar />
-      <Sections />
+    <div className='container_main'>
+      <NavBar />
+     <Browse />
+     </div>
     </div>
   );
 };

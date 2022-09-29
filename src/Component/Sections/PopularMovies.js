@@ -20,6 +20,7 @@ const PopularMovies = () => {
   const { movies, isLoading, error, swiperNavPrevRef, swiperNavNextRef } =
     useMoviesTv(API_POPULAR_MOVIES);
 
+
   //The content varialke
   let content;
 
