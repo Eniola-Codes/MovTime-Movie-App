@@ -42,7 +42,7 @@
     background-color: var(--acivelink);
     color: var(--light);
     font-weight: 500;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .action button:hover
@@ -58,7 +58,7 @@ background-color: var(--selection);
 
 .scaleup
 {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .poster_info
@@ -70,19 +70,17 @@ background-color: var(--selection);
     right: 0;
     width: 100%;
     height: 200px;
-    display: block;
     transform: translateY(250px);
     background-color: var(--sidebarbg);
     border-radius: 15px 15px 0 0;
     padding: 20px;
-    transition: 0.5s all;
+    transition: 0.5s all 0.3s;
     
 }
 
 .scaleup .poster_info
 {
     transform: translateY(0);
-    display: block;
 }
 
 .poster_info p
@@ -99,5 +97,20 @@ background-color: var(--selection);
         font-size: 14px;
     }    
     
+    .scaleup
+    {
+    transform: scale(1.05);
+    }
+
+    .poster_info
+    {
+    display: none;
+    }
+
+    .scaleup
+{
+    transform: scale(1);
+}
+
 }
 

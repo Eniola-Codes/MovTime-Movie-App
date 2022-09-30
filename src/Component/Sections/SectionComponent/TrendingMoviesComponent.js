@@ -18,11 +18,13 @@ const TrendingMoviesComponent = ({
 }) => {
 
     //Using a custom hook to extract my logic values
-  const {releaseDate} = useMovieComponent(API_GENRE,genre_ids,release_date)
+  const {releaseDate, scaleUp, onScaleDownHandler, onScaleUpHandler} = useMovieComponent(API_GENRE,genre_ids,release_date)
+
+  const scaleUpClass = scaleUp ? classes.scaleup : '' ;
 
       //layout and structure the section
   return (
-    <>
+<div className={`${classes.img_container} ${scaleUpClass}`} onMouseOver={onScaleUpHandler} onMouseOut={onScaleDownHandler}>     
       <div>
         <img
           src={API_IMG + poster_path}
@@ -36,7 +38,10 @@ const TrendingMoviesComponent = ({
             {releaseDate} • {genre_ids[0].name}
           </span>
         </div>
-    </>
+        <div className={classes.poster_info}>
+          <p>wdonwdnouewnbqoufwofqwdonwdnouewnbqoufwofqwdonwdnouewnbqoufwofq</p>
+        </div>
+    </div>
   );
 };
 

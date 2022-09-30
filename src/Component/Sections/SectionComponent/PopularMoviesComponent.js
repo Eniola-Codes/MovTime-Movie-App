@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import classes from "../../../styles/MovieSectionComponentStyles.module.css";
 import useMovieComponent from "../../../hooks/moviecomponent-hook";
 
@@ -16,28 +16,15 @@ const PopularMoviesComponent = ({
   release_date,
 }) => {
 
-  const [scaleUp,setScaleUp] =  useState(false);
-
     //Using a custom hook to extract my logic values
-  const {releaseDate} = useMovieComponent(API_GENRE,genre_ids,release_date)
-
-
-  const onScaleUpHandler = () => 
-  {
-    setScaleUp(true);
-  }
-
-  const onScaleDownHandler = () => 
-  {
-    setScaleUp(false);
-  }
+  const {releaseDate, scaleUp, onScaleUpHandler, onScaleDownHandler} = useMovieComponent(API_GENRE,genre_ids,release_date)
 
   const scaleUpClass = scaleUp ? classes.scaleup : '' ;
 
     //layout and structure the section
   return (
     <div className={`${classes.img_container} ${scaleUpClass}`} onMouseOver={onScaleUpHandler} onMouseOut={onScaleDownHandler}>
-      <div >
+      <div>
         <img
           src={API_IMG + poster_path}
           className={classes.poster_image}

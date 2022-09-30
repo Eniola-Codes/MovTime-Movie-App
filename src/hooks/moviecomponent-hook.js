@@ -5,6 +5,7 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
   const [movieGenre, setMovieGenre] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [scaleUp,setScaleUp] =  useState(false);
 
   useEffect(() => {
     //Function to fetch the movies
@@ -39,6 +40,16 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
     fetchMoviesGenres();
   }, [API_LINK_GENRE]);
 
+  const onScaleUpHandler = () => 
+  {
+    setScaleUp(true);
+  }
+
+  const onScaleDownHandler = () => 
+  {
+    setScaleUp(false);
+  }
+
   //Mapping through the movie Genres and putting the id'swith the sp
   movieGenre.map((movie) => {
     for (let x = 0; x < movieGenre.length; x++) {
@@ -57,6 +68,9 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
     isLoading,
     error,
     releaseDate,
+    scaleUp,
+    onScaleUpHandler,
+    onScaleDownHandler
   };
 };
 
