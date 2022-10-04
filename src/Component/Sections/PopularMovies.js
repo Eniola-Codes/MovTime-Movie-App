@@ -20,7 +20,6 @@ const PopularMovies = () => {
   const { movies, isLoading, error, swiperNavPrevRef, swiperNavNextRef } =
     useMoviesTv(API_POPULAR_MOVIES);
 
-
   //The content varialke
   let content;
 
@@ -67,7 +66,11 @@ const PopularMovies = () => {
           },
         }}
         loop
-        autoplay={{ delay: 5000 }}
+        autoplay={{
+          disableOnInteraction: false,
+          delay: 5000,
+          pauseOnMouseEnter: true,
+        }}
         className={classes.myswiper}
         onInit={(swiper) => {
           swiper.params.navigation.prevEl = swiperNavPrevRef.current;

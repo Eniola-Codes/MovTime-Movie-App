@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
+import { Tooltip } from "react-bootstrap";
+import classes from "../styles/MovieSectionComponentStyles.module.css";
 
 const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
   //useState to handle the Movie genre, loading and error states
   const [movieGenre, setMovieGenre] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [scaleUp,setScaleUp] =  useState(false);
+  const [scaleUp, setScaleUp] = useState(false);
+  const [rating, setRating] = useState(false);
 
   useEffect(() => {
     //Function to fetch the movies
@@ -40,15 +43,39 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
     fetchMoviesGenres();
   }, [API_LINK_GENRE]);
 
-  const onScaleUpHandler = () => 
-  {
-    setScaleUp(true);
-  }
+  const renderTooltipPlus = (props) => (
+    <Tooltip id="button-plus" className={classes.tooltip} {...props}>
+      Add to watchlist
+    </Tooltip>
+  );
 
-  const onScaleDownHandler = () => 
-  {
+  const renderTooltipRate = (props) => (
+    <Tooltip id="button-rate" className={classes.tooltip} {...props}>
+      Rate movie
+    </Tooltip>
+  );
+
+  const renderTooltipMore = (props) => (
+    <Tooltip id="button-more" className={classes.tooltip} {...props}>
+      Show more
+    </Tooltip>
+  );
+
+  const onScaleUpHandler = () => {
+    setScaleUp(true);
+  };
+
+  const onScaleDownHandler = () => {
     setScaleUp(false);
-  }
+  };
+
+  const onOpenRatingHandler = () => {
+    setRating(true);
+  };
+
+  const onCloseRatingHandler = () => {
+    setRating(false);
+  };
 
   //Mapping through the movie Genres and putting the id'swith the sp
   movieGenre.map((movie) => {
@@ -69,8 +96,14 @@ const useMovieComponent = (API_LINK_GENRE, genre_ids, release_date) => {
     error,
     releaseDate,
     scaleUp,
+    rating,
     onScaleUpHandler,
-    onScaleDownHandler
+    onScaleDownHandler,
+    onOpenRatingHandler,
+    onCloseRatingHandler,
+    renderTooltipPlus,
+    renderTooltipRate,
+    renderTooltipMore,
   };
 };
 

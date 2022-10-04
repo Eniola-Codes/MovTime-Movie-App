@@ -66,7 +66,11 @@ const TopRatedMovies = () => {
           },
         }}
         loop
-        autoplay={{ delay: 5000 }}
+        autoplay={{
+          disableOnInteraction: false,
+          delay: 5000,
+          pauseOnMouseEnter: true,
+        }}
         className={classes.myswiper}
         onInit={(swiper) => {
           swiper.params.navigation.prevEl = swiperNavPrevRef.current;
