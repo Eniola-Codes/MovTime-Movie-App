@@ -12,6 +12,7 @@ const App = () => {
      <Browse />
      </div>
     </div>
+
   );
 };
 

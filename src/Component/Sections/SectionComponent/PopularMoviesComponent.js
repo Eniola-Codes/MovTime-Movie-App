@@ -113,7 +113,7 @@ const PopularMoviesComponent = ({
           </div>
 
           <div className={classes.icons_right}>
-            
+
             <OverlayTrigger
               placement="top"
               delay={{ show: 100, hide: 200 }}
