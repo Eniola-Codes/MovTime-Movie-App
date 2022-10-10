@@ -1,0 +1,18 @@
+.error {
+    font-size: 24px;
+    color: var(--activelink);
+    text-transform: uppercase;
+  }
+  
+  .error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .error_div {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }

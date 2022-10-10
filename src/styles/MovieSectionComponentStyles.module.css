@@ -4,6 +4,7 @@
   z-index: 10;
   border-radius: 5px;
   transition: 0.3s all;
+  cursor: pointer;
 }
 
 .poster_text {
@@ -36,7 +37,7 @@
   padding: 10px 0;
   border-radius: 40px;
   word-spacing: 10px;
-  background-color: var(--acivelink);
+  background-color: var(--activelink);
   color: var(--light);
   font-weight: 500;
   transition: 0.5s;

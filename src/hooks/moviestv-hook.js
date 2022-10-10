@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState} from "react";
 
 const useMoviesTv = (API_LINK) => {
   //useState to handle the Movie genre, loading and error states
@@ -50,17 +50,11 @@ const useMoviesTv = (API_LINK) => {
     sendRequest();
   }, [API_LINK]);
 
-  //prevent sliderjs default arrow
-  const swiperNavPrevRef = useRef(null);
-  const swiperNavNextRef = useRef(null);
-
   //returning values to be used in components
   return {
     movies,
     isLoading,
     error,
-    swiperNavPrevRef,
-    swiperNavNextRef,
   };
 };
 
