@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../../store/uiStore";
-import Navbar from "react-bootstrap/NavBar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import {Navbar, Nav, NavDropdown} from "react-bootstrap";
 import Logo from "../../Assets/Logo/Logo.svg";
 import classes from "../../styles/BarsStyle/NavBar.module.css";
 import avatar1 from "../../Assets/Avatars/avataaars(1).svg";
