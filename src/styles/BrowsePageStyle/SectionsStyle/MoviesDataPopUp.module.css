@@ -1,0 +1,81 @@
+.icons_div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons_div div {
+  display: inline-block;
+}
+
+.icon {
+  font-size: 36px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.icon_thumb {
+  font-size: 20px;
+  margin-left: 0;
+}
+
+div.icons_left .first_last_icon {
+  margin-left: 0;
+}
+
+.icon_thumb_div {
+  position: absolute;
+  width: 120px;
+  padding: 8px 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: var(--bodybg);
+  border-radius: 20px;
+  letter-spacing: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 18px 2px rgba(0, 0, 0, 0.25);
+}
+
+div.icons_left .icon_rating {
+  position: relative;
+}
+
+.movie_tip p.movie_text {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie_tip p.genre_text {
+  line-height: 24px;
+}
+
+.movie_genre {
+  margin-right: 5px;
+}
+
+.movie_age {
+  border: 2px solid var(--light);
+  width: 40px;
+  text-align: center;
+  padding: 2px 0;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.movie_hd {
+  border: 2px solid var(--sidebarlink);
+  width: 40px;
+  color: var(--sidebarlink);
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+}
+
+.movie_vote {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--sidebarlink);
+}

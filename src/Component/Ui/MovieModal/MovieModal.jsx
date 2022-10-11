@@ -1,12 +1,12 @@
 import React from "react";
-import Modal from "../Ui/Modal";
-import classes from "../../styles/MovieModal.module.css";
-import SwiperUiModal from "../Ui/SwiperUi/SwiperUiModal";
-import useMoviesTv from "../../hooks/moviestv-hook";
+import Modal from "./Modal";
+import classes from "../../../styles/UiStyle/ModalStyle/MovieModal.module.css";
+import SwiperUiModal from "../SwiperUi/SwiperUiModal";
+import useMoviesTv from "../../../hooks/moviestv-hook";
 import { MdCancel } from "react-icons/md";
 import { SwiperSlide } from "swiper/react";
-import Loader from "../Ui/Loader";
-import Error from "../Ui/Error";
+import Loader from "../AppStates/Loader";
+import Error from "../AppStates/Error";
 
 const API_IMG = "https://image.tmdb.org/t/p/w500/";
 

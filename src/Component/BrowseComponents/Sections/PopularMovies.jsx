@@ -1,11 +1,11 @@
 import React from "react";
 import MoviesData from "../SectionsData/MoviesData";
-import classes from "../../../styles/MovieTvSliderStyles.module.css";
+import classes from "../../../styles/BrowsePageStyle/SectionsStyle/MovieTv.module.css";
 import SwiperUi from "../../Ui/SwiperUi/SwiperUi";
 import { SwiperSlide } from "swiper/react";
 import useMoviesTv from "../../../hooks/moviestv-hook";
-import Loader from "../../Ui/Loader";
-import Error from "../../Ui/Error";
+import Loader from "../../Ui/AppStates/Loader";
+import Error from "../../Ui/AppStates/Error";
 
 //The popular movies Api
 const API_POPULAR_MOVIES =
@@ -13,20 +13,18 @@ const API_POPULAR_MOVIES =
 
 const PopularMovies = () => {
   //Using a custom hook to extract my logic values
-  const { movies, isLoading, error } =
-    useMoviesTv(API_POPULAR_MOVIES);
+  const { movies, isLoading, error } = useMoviesTv(API_POPULAR_MOVIES);
 
   //The content varialke
   let content;
 
   //Conditional logic to render content
   if (!isLoading & !error) {
-    content = ( 
-
+    content = (
       <SwiperUi>
-         {movies.map((movieDetails) => (
+        {movies.map((movieDetails) => (
           <SwiperSlide className={classes.swiperslide} key={movieDetails.id}>
-             <MoviesData {...movieDetails} />
+            <MoviesData {...movieDetails} />
           </SwiperSlide>
         ))}
       </SwiperUi>
@@ -35,15 +33,12 @@ const PopularMovies = () => {
 
   //Conditional logic to render content
   if (!isLoading && error) {
-    content = (
-      <Error error={error} />
-    );
+    content = <Error error={error} />;
   }
 
   //Conditional logic to render content
   if (isLoading) {
-    content = (
-<Loader />    );
+    content = <Loader />;
   }
 
   //rendering the content

@@ -1,4 +1,4 @@
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const useMoviesTv = (API_LINK) => {
   //useState to handle the Movie genre, loading and error states
@@ -59,12 +59,3 @@ const useMoviesTv = (API_LINK) => {
 };
 
 export default useMoviesTv;
-
-
-
-
-
-
-
-
-

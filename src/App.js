@@ -3,6 +3,7 @@ import SideBar from "./Component/Bars/SideBar";
 import Browse from "./pages/Browse";
 import NavBar from "./Component/Bars/NavBar";
 
+
 const App = () => {
 
   return (

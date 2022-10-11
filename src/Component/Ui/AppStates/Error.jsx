@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from '../../styles/UiStyle/Error.module.css'
+import classes from '../../../styles/UiStyle/AppStatesStyle/Error.module.css'
 
 const Error = (props) => {
   return (

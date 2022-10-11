@@ -1,11 +1,11 @@
 import React from "react";
 import MoviesData from "../SectionsData/MoviesData";
-import classes from "../../../styles/MovieTvSliderStyles.module.css";
+import classes from "../../../styles/BrowsePageStyle/SectionsStyle/MovieTv.module.css";
 import SwiperUi from "../../Ui/SwiperUi/SwiperUi";
 import { SwiperSlide } from "swiper/react";
 import useMoviesTv from "../../../hooks/moviestv-hook";
-import Loader from "../../Ui/Loader";
-import Error from "../../Ui/Error";
+import Loader from "../../Ui/AppStates/Loader";
+import Error from "../../Ui/AppStates/Error";
 
 //The Trending movies Api
 const API_TRENDING_MOVIES =
@@ -34,9 +34,7 @@ const TrendingMovies = () => {
 
   //Conditional logic to render content
   if (!isLoading && error) {
-    content = (
-      <Error error={error} />
-    );
+    content = <Error error={error} />;
   }
 
   //Conditional logic to render content

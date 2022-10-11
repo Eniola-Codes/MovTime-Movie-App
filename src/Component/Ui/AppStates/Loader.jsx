@@ -1,6 +1,6 @@
 import React from 'react';
-import spinner from "../../Assets/Icons/spinner.svg";
-import classes from '../../styles/UiStyle/Loader.module.css';
+import spinner from "../../../Assets/Icons/spinner.svg";
+import classes from '../../../styles/UiStyle/AppStatesStyle/Loader.module.css';
 
 const Loader = () => {
   return (

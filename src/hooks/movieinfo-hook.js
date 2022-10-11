@@ -1,27 +1,26 @@
 import { useState } from "react";
 import { Tooltip } from "react-bootstrap";
-import classes from "../styles/MovieSectionComponentStyles.module.css";
 
-const useMovieGenre = (release_date) => {
+const useMovieInfo = (release_date) => {
   //useState to handle the Movie genre, loading and error states
   const [scaleUp, setScaleUp] = useState(false);
   const [rating, setRating] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const renderTooltipPlus = (props) => (
-    <Tooltip id="button-plus" className={classes.tooltip} {...props}>
+    <Tooltip id="button-plus" className='tooltip' {...props}>
       Add to watchlist
     </Tooltip>
   );
 
   const renderTooltipRate = (props) => (
-    <Tooltip id="button-rate" className={classes.tooltip} {...props}>
+    <Tooltip id="button-rate" className='tooltip' {...props}>
       Rate movie
     </Tooltip>
   );
 
   const renderTooltipMore = (props) => (
-    <Tooltip id="button-more" className={classes.tooltip} {...props}>
+    <Tooltip id="button-more" className='tooltip' {...props}>
       Show more
     </Tooltip>
   );
@@ -71,4 +70,4 @@ const useMovieGenre = (release_date) => {
   };
 };
 
-export default useMovieGenre;
+export default useMovieInfo;

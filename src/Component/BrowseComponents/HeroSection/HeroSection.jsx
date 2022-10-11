@@ -4,8 +4,8 @@ import SwiperUiHero from "../../Ui/SwiperUi/SwiperUiHero";
 import classes from "../../../styles/BrowsePageStyle/HeroSectionStyle/HeroSection.module.css";
 import { SwiperSlide } from "swiper/react";
 import useMoviesTv from "../../../hooks/moviestv-hook";
-import Loader from '../../Ui/Loader';
-import Error from "../../Ui/Error";
+import Loader from '../../Ui/AppStates/Loader';
+import Error from "../../Ui/AppStates/Error";
 
 //The popular movies Api
 const API_FEATURED_MOVIES =
