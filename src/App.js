@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "./Component/Bars/SideBar";
-import Browse from "./pages/Browse";
+import BrowseComponents from "./Component/BrowseComponents/BrowseComponents";
 import NavBar from "./Component/Bars/NavBar";
 
 
@@ -11,7 +11,7 @@ const App = () => {
      <SideBar />
     <div className='container_main'>
       <NavBar />
-     <Browse />
+     <BrowseComponents />
      </div>
     </div>
 
