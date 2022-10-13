@@ -1,4 +1,3 @@
-import React from "react";
 import HeroSection from "./HeroSection/HeroSection";
 import classes from "../../styles/BrowsePageStyle/BrowseComponents.module.css";
 import TrendingMovies from "./Sections/TrendingMovies";
@@ -11,11 +10,11 @@ const BrowseComponents = () => {
   return (
     <div className={classes.content_div}>
       <HeroSection />
-        <PopularMovies />
-        <TrendingMovies />
-        <TopRatedMovies />
-        <PopularTv />
-        <TopRatedTv />
+      <PopularMovies />
+      <TrendingMovies />
+      <TopRatedMovies />
+      <PopularTv />
+      <TopRatedTv />
     </div>
   );
 };

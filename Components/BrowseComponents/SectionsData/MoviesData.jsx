@@ -1,7 +1,7 @@
 import classes from "../../../styles/BrowsePageStyle/SectionsStyle/MoviesTvData.module.css";
 import useMovieComponent from "../../../hooks/moviegenre-hook";
 import useMovieInfo from "../../../hooks/movieinfo-hook";
-import MovieModal from "../../Ui/MovieModal/MovieModal";
+import MovieModal from "../../Ui/Modals/MovieModal";
 import MoviesDataPopUp from "./MoviesDataPopUp";
 
 //The images Api
@@ -13,7 +13,7 @@ const API_IMG_ORIGINAL = "https://image.tmdb.org/t/p/original/";
 const API_GENRE =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=63963159dae94bf1e30a674eee861084";
 
-const PopularMoviesComponent = ({
+const MoviesData = ({
   poster_path,
   overview,
   backdrop_path,
@@ -48,18 +48,18 @@ const PopularMoviesComponent = ({
   //layout and structure the section
   return (
     <>
-      {modalIsOpen && (
-        <MovieModal
-          src={API_IMG_ORIGINAL + backdrop_path}
-          title={title}
-          movie_overview={overview}
-          genre={genre_content}
-          release_date={releaseDate}
-          vote={vote_average}
-          id={id}
-          onCloseModal={onCloseMovieModal}
-        />
-      )}
+      <MovieModal
+        openModal={modalIsOpen}
+        src={API_IMG_ORIGINAL + backdrop_path}
+        title={title}
+        movie_overview={overview}
+        genre={genre_content}
+        release_date={releaseDate}
+        vote={vote_average}
+        id={id}
+        onCloseModal={onCloseMovieModal}
+      />
+
       <div
         className={`${classes.img_container} ${scaleUpClass}`}
         onMouseOver={onScaleUpHandler}
@@ -93,4 +93,4 @@ const PopularMoviesComponent = ({
   );
 };
 
-export default PopularMoviesComponent;
+export default MoviesData;

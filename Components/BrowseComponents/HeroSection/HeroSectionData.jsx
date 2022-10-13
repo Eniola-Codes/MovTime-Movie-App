@@ -1,9 +1,8 @@
-import React from "react";
 import Image from "next/image";
 import classes from "../../../styles/BrowsePageStyle/HeroSectionStyle/HeroSectionData.module.css";
 import playImage from "../../../public/Assets/Icons/bold_video_circle.svg";
 import Loader from "../../Ui/AppStates/Loader";
-import Error from "../../Ui/AppStates/Error"
+import Error from "../../Ui/AppStates/Error";
 import useMovieComponent from "../../../hooks/moviegenre-hook";
 
 //The images Api
@@ -32,22 +31,20 @@ const HeroSectionComponent = ({
   //Conditional logic to render content
   if (!isLoading && !error) {
     genre_content = genre_ids.map((movie) => (
-      <span className={classes.genre_items} key={Math.random()}>{movie.name}</span>
+      <span className={classes.genre_items} key={Math.random()}>
+        {movie.name}
+      </span>
     ));
   }
 
   //Conditional logic to render content
   if (!isLoading && error) {
-    genre_content = (
-     <Error />
-    );
+    genre_content = <Error />;
   }
 
   //Conditional logic to render content
   if (isLoading) {
-    genre_content = (
-      <Loader />
-    );
+    genre_content = <Loader className={classes.loader} />;
   }
 
   //layout and structure the section
@@ -65,7 +62,7 @@ const HeroSectionComponent = ({
         {genre_content}
         <div className={classes.action}>
           <button type="button">
-           <span>Watch</span> <Image src={playImage} alt="play"></Image>
+            <span>Watch</span> <Image src={playImage} alt="play"></Image>
           </button>
         </div>
       </div>

@@ -13,13 +13,17 @@
   .swiperslide:nth-child(1n) {
     width: auto;
   }
+
+  .modal
+  {
+    background-color: var(--sidebarbg);
+  }
   
 .modal_image
 {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 14px 14px 0 0;
 }
 
 .movie_details
@@ -78,6 +82,7 @@
     color: var(--activelink);
     transform: scale(1.05);
 }
+
 
 
 @media only screen and (max-width: 576px)

@@ -13,10 +13,6 @@
   cursor: pointer;
 }
 
-.icon_thumb {
-  font-size: 20px;
-  margin-left: 0;
-}
 
 div.icons_left .first_last_icon {
   margin-left: 0;
@@ -28,14 +24,18 @@ div.icons_left .first_last_icon {
   padding: 8px 0;
   left: 50%;
   top: 50%;
+  text-align: center; 
   transform: translate(-50%, -50%);
-  text-align: center;
   background-color: var(--bodybg);
   border-radius: 20px;
-  letter-spacing: 10px;
-  cursor: pointer;
   box-shadow: 0 1px 18px 2px rgba(0, 0, 0, 0.25);
 }
+
+.icon_thumb {
+  font-size: 20px;
+  cursor: pointer;
+}
+
 
 div.icons_left .icon_rating {
   position: relative;

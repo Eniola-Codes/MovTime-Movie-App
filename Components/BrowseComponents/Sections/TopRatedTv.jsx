@@ -1,4 +1,3 @@
-import React from "react";
 import TvsData from "../SectionsData/TvsData";
 import classes from "../../../styles/BrowsePageStyle/SectionsStyle/MovieTv.module.css";
 import SwiperUi from "../../Ui/SwiperUi/SwiperUi";

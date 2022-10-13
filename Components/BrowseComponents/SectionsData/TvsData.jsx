@@ -1,8 +1,7 @@
-import React from "react";
 import classes from "../../../styles/BrowsePageStyle/SectionsStyle/MoviesTvData.module.css";
 import useMovieGenre from "../../../hooks/moviegenre-hook";
 import useMovieInfo from "../../../hooks/movieinfo-hook";
-import MovieModal from "../../Ui/MovieModal/MovieModal";
+import MovieModal from "../../Ui/Modals/MovieModal";
 import MoviesDataPopUp from "./MoviesDataPopUp";
 
 //The images Api
@@ -49,7 +48,18 @@ const PopularTvComponent = ({
   //layout and structure the section
   return (
     <>
-    {modalIsOpen && <MovieModal src={API_IMG_ORIGINAL + backdrop_path} title={original_name} movie_overview={overview} genre={genre_content} release_date={releaseDate} vote={vote_average} id={id} onCloseModal={onCloseMovieModal}/>}
+      <MovieModal
+        openModal={modalIsOpen}
+        src={API_IMG_ORIGINAL + backdrop_path}
+        title={original_name}
+        movie_overview={overview}
+        genre={genre_content}
+        release_date={releaseDate}
+        vote={vote_average}
+        id={id}
+        onCloseModal={onCloseMovieModal}
+      />
+
       <div
         className={`${classes.img_container} ${scaleUpClass}`}
         onMouseOver={onScaleUpHandler}
@@ -70,8 +80,14 @@ const PopularTvComponent = ({
           </span>
         </div>
 
-        <MoviesDataPopUp className={classes.poster_info} onOpenMovieModal={onOpenMovieModal} release_date={releaseDate} adult={adult} vote_average={vote_average} genre_content={genre_content}/>
-
+        <MoviesDataPopUp
+          className={classes.poster_info}
+          onOpenMovieModal={onOpenMovieModal}
+          release_date={releaseDate}
+          adult={adult}
+          vote_average={vote_average}
+          genre_content={genre_content}
+        />
       </div>
     </>
   );

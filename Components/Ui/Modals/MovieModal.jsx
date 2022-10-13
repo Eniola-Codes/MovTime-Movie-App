@@ -1,5 +1,4 @@
-import React from "react";
-import Modal from "./Modal";
+import Modal from "react-bootstrap/Modal";
 import classes from "../../../styles/UiStyle/ModalStyle/MovieModal.module.css";
 import SwiperUiModal from "../SwiperUi/SwiperUiModal";
 import useMoviesTv from "../../../hooks/moviestv-hook";
@@ -36,9 +35,7 @@ const MovieModal = (props) => {
 
   //Conditional logic to render content
   if (!isLoading && error) {
-    content = (
-      <Error error={error} />
-    );
+    content = <Error error={error} />;
   }
 
   //Conditional logic to render content
@@ -47,26 +44,40 @@ const MovieModal = (props) => {
   }
 
   return (
-    <Modal onClosemodal={props.onCloseModal}>
-      <div className={classes.close_btn_div}>
-        <MdCancel className={classes.close_btn} onClick={props.onCloseModal} />
-      </div>
-      <div>
-        <img src={props.src} className={classes.modal_image} alt="movie"></img>
-      </div>
-      <div className={classes.movie_details}>
-        <div className={classes.title_release}>
-          <p className={classes.movie_title}>{props.title}</p>
-          <div>
-            <p>Released : {props.release_date}</p>
-            <p>Rating : {props.vote.toFixed(1)}</p>
-          </div>
+    <Modal
+      size="lg"
+      show={props.openModal}
+      onHide={props.onCloseModal}
+      onClosemodal={props.onCloseModal}
+    >
+      <div className={classes.modal}>
+        <div className={classes.close_btn_div}>
+          <MdCancel
+            className={classes.close_btn}
+            onClick={props.onCloseModal}
+          />
         </div>
-        <p>{props.genre}</p>
-        <p>{props.movie_overview}</p>
+        <div>
+          <img
+            src={props.src}
+            className={classes.modal_image}
+            alt="movie"
+          ></img>
+        </div>
+        <div className={classes.movie_details}>
+          <div className={classes.title_release}>
+            <p className={classes.movie_title}>{props.title}</p>
+            <div>
+              <p>Released : {props.release_date}</p>
+              <p>Rating : {props.vote.toFixed(1)}</p>
+            </div>
+          </div>
+          <p>{props.genre}</p>
+          <p>{props.movie_overview}</p>
 
-        <p className={classes.similar_text}>People also watch</p>
-        <div className={classes.similar_movies}>{content}</div>
+          <p className={classes.similar_text}>People also watch</p>
+          <div className={classes.similar_movies}>{content}</div>
+        </div>
       </div>
     </Modal>
   );

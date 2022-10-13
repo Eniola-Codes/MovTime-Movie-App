@@ -69,6 +69,12 @@
   width: 100%;
 }
 
+.loader{
+  height: 50px !important;
+  justify-content: left !important; 
+
+}
+
 @media only screen and (max-width: 767px) {
   .overlay {
     background: linear-gradient(
