@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialUiState = { sideBar : false, navToggler : false };
+const initialUiState = { sideBar : false,  showBars : true };
 
 const uiSlice = createSlice({
   name: "ui",

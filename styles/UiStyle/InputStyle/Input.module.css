@@ -1,0 +1,19 @@
+.input_form input {
+  background-color: var(--bodybg);
+  border: none;
+  color: var(--light);
+  font-size: 18px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.input_form input:focus,
+.input_form input:active {
+  border: none;
+  outline: none;
+}
+
+.input_form {
+  border-bottom: 2px solid var(--light);
+  margin-top: 40px;
+}

@@ -1,0 +1,56 @@
+.auth_container
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_col
+{
+    position: relative;
+}
+
+.authForm
+{
+    width: 90%;
+    max-width: 500px;
+}
+
+.navbar
+{
+    padding-top: 20px ;
+}
+
+.nav_logo{
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767px)
+{
+    .image_col
+{
+    display: none;
+}
+
+.auth_container
+{
+    width: 100vw;
+}
+
+}
+
+@media only screen and (max-width: 576px)
+{
+    .auth_container
+    {
+        margin: 75px 0;
+        width: auto;
+        height: auto;
+    }
+    
+
+}
+

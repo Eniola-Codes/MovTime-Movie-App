@@ -1,0 +1,20 @@
+.button
+{
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--light);
+    padding: 5px 0;
+    border: none;
+    color: var(--bodybg);
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+    border: 1px solid var(--light);
+}
+
+.button:hover
+{
+    background-color: var(--bodybg);
+    color: var(--light);
+    border-color: var(--light);
+}

@@ -1,0 +1,30 @@
+.head_text
+{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.end_text
+{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.end_text a 
+{
+    color: var(--activelink);
+    text-decoration: none;
+}
+
+.invalid
+{
+    border-bottom: 2px solid var(--activelink) ;
+}
+
+.form_error
+{
+    padding: 15px 10px;
+    background-color: var(--activelink);
+    border: 1px solid var(--dark);
+    font-size: 14px;
+}
