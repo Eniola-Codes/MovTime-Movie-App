@@ -4,67 +4,20 @@ import Link from "next/link";
 import classes from "../../../styles/AuthStyle/Auth.module.css";
 import Button from "../../Ui/Button/button";
 import { useState, useReducer } from "react";
-
-const userReducer = (state, action) => {
-  if (action.type === "USER_INPUT") {
-    return { value: action.val, isValid: action.val.trim().length > 0 };
-  }
-  return { value: "", isValid: false };
-};
-const emailReducer = (state, action) => {
-  if (action.type === "USER_EMAIL") {
-    return {
-      value: action.val,
-      isValid: action.val.includes("@") && action.val.includes("."),
-    };
-  }
-  return { value: "", isValid: false };
-};
-const passReducer = (state, action) => {
-  if (action.type === "USER_PASS") {
-    return {
-      value: action.val,
-      isValid: action.val.trim().length > 6,
-    };
-  }
-  return { value: "", isValid: false };
-};
+import useAuth from "../../../hooks/auth-hook";
 
 const Signup = (props) => {
-  const [emailState, dispatchEmail] = useReducer(emailReducer, {
-    value: "",
-    isValid: null,
-  });
-  const [userState, dispatchUser] = useReducer(userReducer, {
-    value: "",
-    isValid: null,
-  });
-  const [passState, dispatchPass] = useReducer(passReducer, {
-    value: "",
-    isValid: null,
-  });
-  const [formIsValid, setFormIsValid] = useState(null);
-
-  const usernameHandler = (event) => {
-    dispatchUser({ type: "USER_INPUT", val: event.target.value });
-    setFormIsValid(null);
-  };
-
-  const emailHandler = (event) => {
-    dispatchEmail({ type: "USER_EMAIL", val: event.target.value });
-
-    if (emailState.isValid) {
-      setFormIsValid(null);
-    }
-  };
-
-  const passwordHandler = (event) => {
-    dispatchPass({ type: "USER_PASS", val: event.target.value });
-
-    if (passState.isValid) {
-      setFormIsValid(null);
-    }
-  };
+  const {
+    emailState,
+    passState,
+    initialState,
+    userState,
+    error_message,
+    usernameHandler,
+    emailHandler,
+    passwordHandler,
+    setInitialState,
+  } = useAuth();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -75,17 +28,10 @@ const Signup = (props) => {
       password: passState.value,
     };
 
-    if (!userState.isValid) {
-      setFormIsValid("Please input a valid username.");
-      return;
-    }
-
-    if (!emailState.isValid) {
-      setFormIsValid("Please input a valid email address.");
-      return;
-    }
-    if (!passState.isValid) {
-      setFormIsValid("Password must be more than 6 characters");
+    if (userState.isValid && emailState.isValid && passState.isValid) {
+      setInitialState(true);
+    } else {
+      setInitialState(null);
       return;
     }
 
@@ -96,14 +42,31 @@ const Signup = (props) => {
     passState.value = "";
   };
 
-  const userValidity = userState.isValid ? "" : classes.invalid;
-  const emailValidity = emailState.isValid ? "" : classes.invalid;
-  const passValidity = passState.isValid ? "" : classes.invalid;
+  // let error_message = null;
+
+  let userValidity = "";
+  let emailValidity = "";
+  let passValidity = "";
+
+  if (!initialState) {
+    userValidity = userState.isValid ? "" : classes.invalid;
+    emailValidity = emailState.isValid ? "" : classes.invalid;
+    passValidity = passState.isValid ? "" : classes.invalid;
+    if (!userState.isValid) {
+      error_message = "Please input a valid username";
+    } else if (!emailState.isValid) {
+      error_message = "Please input a valid email address";
+    } else if (!passState.isValid) {
+      error_message = "Password must be more than 6 characters";
+    }
+  }
 
   let button_text;
 
-  if (props.isLoading) {
+  if (props.isLoading && !props.isError) {
     button_text = <>Loading...</>;
+  } else if (props.isError) {
+    button_text = <>Something went wrong...</>;
   } else {
     button_text = <>Sign Up</>;
   }
@@ -116,9 +79,9 @@ const Signup = (props) => {
           Join our community and get access top rated movies
         </p>
       </div>
-      {formIsValid && (
+      {error_message && (
         <div className={classes.form_error}>
-          <span>{formIsValid}</span>
+          <span>{error_message}</span>
         </div>
       )}
       <form onSubmit={onSubmitHandler}>

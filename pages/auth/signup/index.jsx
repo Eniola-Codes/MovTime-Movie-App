@@ -7,36 +7,48 @@ const SIGN_UP_API =
 
 const index = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(null);
   const router = useRouter();
 
   const onSignUpHandler = (userData) => {
     const authSignup = async () => {
       setIsLoading(true);
-      const response = await fetch(SIGN_UP_API, {
-        method: "POST",
-        body: JSON.stringify({
-          email: userData.email,
-          password: userData.password,
-          returnSecureToken: true,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      setIsLoading(false);
+      setIsError(null);
+      try {
+        const response = await fetch(SIGN_UP_API, {
+          method: "POST",
+          body: JSON.stringify({
+            email: userData.email,
+            password: userData.password,
+            returnSecureToken: true,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        setIsLoading(false);
 
-      const data = await response.json();
+        const data = await response.json();
 
-      console.log(data.email);
-      console.log(data.idToken);
+        console.log(data.email);
+        console.log(data.idToken);
 
-      router.push("/");
+        router.replace("/");
+      } catch (error) {
+        setIsError(true);
+      }
     };
 
     authSignup();
   };
 
-  return <Signup onSignUp={onSignUpHandler} isLoading={isLoading} />;
+  return (
+    <Signup
+      onSignUp={onSignUpHandler}
+      isLoading={isLoading}
+      isError={isError}
+    />
+  );
 };
 
 export default index;
