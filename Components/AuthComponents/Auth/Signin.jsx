@@ -3,7 +3,7 @@ import Layout from "../Layout/layout";
 import Link from "next/link";
 import classes from "../../../styles/AuthStyle/Auth.module.css";
 import Button from "../../Ui/Button/button";
-import useAuth from "../../../hooks/auth-hook";
+import useAuth from "../../../hooks/authValidation-hook";
 
 const Signin = (props) => {
   const {

@@ -3,8 +3,7 @@ import Layout from "../Layout/layout";
 import Link from "next/link";
 import classes from "../../../styles/AuthStyle/Auth.module.css";
 import Button from "../../Ui/Button/button";
-import { useState, useReducer } from "react";
-import useAuth from "../../../hooks/auth-hook";
+import useAuth from "../../../hooks/authValidation-hook";
 
 const Signup = (props) => {
   const {
@@ -41,8 +40,6 @@ const Signup = (props) => {
     emailState.value = "";
     passState.value = "";
   };
-
-  // let error_message = null;
 
   let userValidity = "";
   let emailValidity = "";

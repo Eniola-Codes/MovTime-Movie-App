@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import classes from "../../../styles/AuthStyle/Layout.module.css";
@@ -9,6 +11,12 @@ import LogoText from "../../../public/Assets/Logo/LogoText.svg";
 import Logo from "../../../public/Assets/Logo/Logo.svg";
 
 const Layout = (props) => {
+  const router = useRouter();
+
+  const onClickHandler = () => {
+    router.push("/");
+  };
+
   return (
     <Row>
       <Col lg={4} className={classes.image_col}>
@@ -21,10 +29,10 @@ const Layout = (props) => {
       </Col>
       <Col lg={8}>
         <Navbar className={classes.navbar}>
-          <Navbar.Brand className={classes.nav_logo}>
-         <Image src={Logo} alt="logo"></Image>
-           <Image src={LogoText} alt="logo text"></Image>
-          </Navbar.Brand>
+            <Navbar.Brand className={classes.nav_logo}>
+              <Image src={Logo} alt="logo"></Image>
+              <Image src={LogoText} alt="logo text"></Image>
+            </Navbar.Brand>
         </Navbar>
         <div className={classes.auth_container}>
           <div className={classes.authForm}>{props.children}</div>

@@ -26,6 +26,7 @@
     margin: auto;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 767px)
