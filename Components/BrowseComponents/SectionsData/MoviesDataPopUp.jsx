@@ -76,7 +76,7 @@ const MoviesDataPopUp = (props) => {
           {!props.adult && <span className={classes.movie_age}>G</span>}
           {props.adult && <span className={classes.movie_age}>PG</span>}
           <span className={classes.movie_vote}>
-            {props.vote_average.toFixed(1)} Rating
+            {/* {props.vote_average.toFixed(1)} Rating */}
           </span>
           <span className={classes.movie_hd}>HD</span>
         </p>

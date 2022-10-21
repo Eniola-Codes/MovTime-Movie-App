@@ -10,20 +10,20 @@
   transition: 0.3s;
 }
 
-.navbar .nav_link.active {
-  color: var(--activelink);
-}
-
-.navbar .nav_link:hover {
-  color: var(--activelink);
-}
-
 .nav_linkgroup {
   margin-left: 40px;
 }
 
-.nav_linkgroup .nav_link {
-  margin-left: 10px;
+.nav_link a
+{
+  text-decoration: none;
+  color: var(--light);
+  transition: 0.3s;
+}
+
+.nav_link a:hover
+{
+  color: var(--activelink);
 }
 
 .nav_linkgroup_2 {

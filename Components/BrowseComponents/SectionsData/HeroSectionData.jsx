@@ -12,6 +12,9 @@ const API_IMG = "https://image.tmdb.org/t/p/original/";
 const API_GENRE =
   "https://api.themoviedb.org/3/genre/movie/list?api_key=63963159dae94bf1e30a674eee861084";
 
+  const API_GENRE_TV =
+  "https://api.themoviedb.org/3/genre/tv/list?api_key=63963159dae94bf1e30a674eee861084";
+
 const HeroSectionComponent = ({
   backdrop_path,
   title,
@@ -30,11 +33,13 @@ const HeroSectionComponent = ({
 
   //Conditional logic to render content
   if (!isLoading && !error) {
-    genre_content = genre_ids.map((movie) => (
-      <span className={classes.genre_items} key={Math.random()}>
+
+    genre_content = genre_ids.map((movie) => 
+      movie.name && <span className={classes.genre_items} key={Math.random()}>
         {movie.name}
       </span>
-    ));
+    );
+    
   }
 
   //Conditional logic to render content

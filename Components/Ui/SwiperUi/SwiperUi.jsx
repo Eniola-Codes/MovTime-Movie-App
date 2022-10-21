@@ -21,6 +21,7 @@ const SwiperUi = (props) =>
         }}
         speed={800}
         slidesPerView={4}
+        spaceBetween={20}
         breakpoints={{
           1900: {
             slidesPerView: 6,

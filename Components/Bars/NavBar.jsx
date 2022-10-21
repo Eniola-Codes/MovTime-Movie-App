@@ -1,13 +1,14 @@
 import { useState } from "react";
-import Image from 'next/image'
+import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../../store/uiStore";
-import {Navbar, Nav, NavDropdown} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import Logo from "../../public/Assets/Logo/Logo.svg";
 import classes from "../../styles/BarsStyle/NavBar.module.css";
 import avatar1 from "../../public/Assets/Avatars/avataaars(1).svg";
 import { FaBell } from "react-icons/fa";
 import { RiSearch2Fill } from "react-icons/ri";
+import Link from "next/link";
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -34,30 +35,19 @@ const NavBar = () => {
         </div>
       </Nav>
       <Nav className={classes.nav_linkgroup}>
-        <Nav.Link className={classes.nav_link}>All</Nav.Link>
-        <Nav.Link className={classes.nav_link}>Movies</Nav.Link>
-        <NavDropdown
-          id="nav-dropdown-light-example"
-          title={<span className={classes.nav_link}>Categories</span>}
-          menuVariant="dark"
-          className="text-light"
-        >
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
+      <span className={`${classes.nav_link} mx-2`}><Link href='/browse'>All</Link></span>
+        <span className={`${classes.nav_link} mx-2`}><Link href='/browse/movies'>Movies</Link></span>
+        <span className={`${classes.nav_link} mx-2`}><Link href='/browse/tvseries'>Tv series</Link></span>
       </Nav>
       <Nav className={classes.nav_linkgroup_2}>
         <Nav.Link className={classes.nav_link}>
           <RiSearch2Fill />
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ms-3`}>
-        <FaBell /> 
+          <FaBell />
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ms-3`}>
-       <Image src={avatar1} alt="Avatar" width={32} height={32}></Image>
+          <Image src={avatar1} alt="Avatar" width={32} height={32}></Image>
         </Nav.Link>
         <Nav.Link className={`${classes.nav_link} ${classes.nav_name}`}>
           Eniola Codes

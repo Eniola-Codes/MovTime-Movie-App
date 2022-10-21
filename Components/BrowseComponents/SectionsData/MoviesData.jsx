@@ -24,7 +24,7 @@ const MoviesData = ({
   vote_average,
   id,
 }) => {
-  //Using a custom hook to extract my logic values
+  // Using a custom hook to extract my logic values
   useMovieComponent(API_GENRE, genre_ids);
 
   const {
@@ -45,7 +45,7 @@ const MoviesData = ({
 
   const scaleUpClass = scaleUp ? classes.scaleup : "";
 
-  //layout and structure the section
+  // layout and structure the section
   return (
     <>
       <MovieModal

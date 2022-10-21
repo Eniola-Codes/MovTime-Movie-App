@@ -16,6 +16,7 @@ const useMovieGenre = (API_LINK_GENRE, genre_ids) => {
       try {
         //fetching the movie genre
         const response = await fetch(API_LINK_GENRE);
+        // const responseTv = await fetch(API_GENRE_TV);
 
         //checking if` the response is Ok
         if (!response.ok) {
@@ -27,8 +28,7 @@ const useMovieGenre = (API_LINK_GENRE, genre_ids) => {
         //Setting list of movie genre
         setMovieGenre(data.genres);
       } catch (error) {
-        //Catching errors and
-        //Setting loading state
+        //Catching errors and Setting loading state
         setIsLoading(false);
       }
       //Setting loading state

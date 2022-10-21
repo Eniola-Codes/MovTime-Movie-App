@@ -43,12 +43,10 @@ const PopularTv = () => {
 
   //rendering the content
   return (
-    <>
       <section className={classes.style_movies}>
         <h4 className={classes.style_movies_header}>Popular Series</h4>
         {content}
       </section>
-    </>
   );
 };
 

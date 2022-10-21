@@ -43,12 +43,10 @@ const TopRatedMovies = () => {
 
   //rendering the content
   return (
-    <>
       <section className={classes.style_movies}>
         <h4 className={classes.style_movies_header}>Top Rated Movies</h4>
         {content}
       </section>
-    </>
   );
 };
 

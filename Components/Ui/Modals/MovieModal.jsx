@@ -69,7 +69,7 @@ const MovieModal = (props) => {
             <p className={classes.movie_title}>{props.title}</p>
             <div>
               <p>Released : {props.release_date}</p>
-              <p>Rating : {props.vote.toFixed(1)}</p>
+              {/* <p>Rating : {props.vote.toFixed(1)}</p> */}
             </div>
           </div>
           <p>{props.genre}</p>
