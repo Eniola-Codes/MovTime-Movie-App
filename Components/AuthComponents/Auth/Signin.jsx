@@ -1,5 +1,5 @@
 import Input from "../../Ui/Input/Input";
-import Layout from "../Layout/layout";
+import Layout from '../Layout/Layout'
 import Link from "next/link";
 import classes from "../../../styles/AuthStyle/Auth.module.css";
 import Button from "../../Ui/Button/button";
