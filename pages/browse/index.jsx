@@ -4,7 +4,6 @@ import classes from "../../styles/BrowsePageStyle/SectionsStyle/MovieTv.module.c
 import HeroSectionComponent from "../../Components/BrowseComponents/SectionsData/HeroSectionData";
 import SwiperUiHero from "../../Components/Ui/SwiperUi/SwiperUiHero";
 import { SwiperSlide } from "swiper/react";
-import Wrapper from "../../Components/Ui/Wrapper/Wrapper";
 import PopularMovies from "../../Components/BrowseComponents/Sections/PopularMovies";
 import TrendingMovies from "../../Components/BrowseComponents/Sections/TrendingMovies";
 import TopRatedMovies from "../../Components/BrowseComponents/Sections/TopRatedMovies";
@@ -40,14 +39,14 @@ const Home = (props) => {
       <SideBar />
       <div className="container_main">
         <NavBar />
-        <Wrapper>
+        <div className="content_div">
           <section>{content}</section>
           <PopularMovies />
           <TrendingMovies />
           <TopRatedMovies />
           <PopularTv />
           <TopRatedTv />
-        </Wrapper>
+        </div>
       </div>
     </div>
   );

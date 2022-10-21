@@ -5,7 +5,6 @@ import SwiperUiHero from "../../Components/Ui/SwiperUi/SwiperUiHero";
 import classes from "../../styles/BrowsePageStyle/HeroSectionStyle/HeroSection.module.css";
 import { SwiperSlide } from "swiper/react";
 import Error from "../../Components/Ui/AppStates/Error";
-import Wrapper from "../../Components/Ui/Wrapper/Wrapper";
 import TopRatedTv from "../../Components/BrowseComponents/Sections/TopRatedTv";
 import PopularTv from "../../Components/BrowseComponents/Sections/PopularTv";
 
@@ -38,11 +37,11 @@ const Home = (props) => {
       <SideBar />
       <div className="container_main">
         <NavBar />
-        <Wrapper>
+        <div className="content_div">
           <section>{content}</section>
           <PopularTv />
           <TopRatedTv />
-        </Wrapper>
+        </div>
       </div>
     </div>
   );

@@ -57,4 +57,15 @@ body {
   font-family: "Poppins", "sans-serif";
 }
 
+.content_div {
+  width: calc(100vw - 250px);
+  overflow-wrap: break-word;
+  padding-left: 0px;
+}
+
+@media only screen and (max-width: 991px) {
+  .content_div {
+    width: calc(100vw - 0px);
+  }
+}
 

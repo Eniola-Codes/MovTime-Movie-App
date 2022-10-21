@@ -10,12 +10,8 @@ import { Navbar } from "react-bootstrap";
 import LogoText from "../../../public/Assets/Logo/LogoText.svg";
 import Logo from "../../../public/Assets/Logo/Logo.svg";
 
-const Layout = (props) => {
+const Layout = () => {
   const router = useRouter();
-
-  const onClickHandler = () => {
-    router.push("/");
-  };
 
   return (
     <Row>
@@ -35,7 +31,7 @@ const Layout = (props) => {
             </Navbar.Brand>
         </Navbar>
         <div className={classes.auth_container}>
-          <div className={classes.authForm}>{props.children}</div>
+          <div className={classes.authForm}>{children}</div>
         </div>
       </Col>
     </Row>
