@@ -1,6 +1,6 @@
 # End result
 
-Click here : https://movtime-movie-app.netlify.app/
+Click here : https://movtime-movies-app.vercel.app/
 
 # Figma design File
 
