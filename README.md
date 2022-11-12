@@ -1,42 +1,71 @@
+# MOVTIME movie application
 
+A Movie application where you can go to view infomration and images of the most trending, popular, top rated , similar movies and Tv series all up to date.
 
-# End result
+**End Result**
 
 Click here : https://movtime-movies-app.vercel.app/
 
-# Figma design File
+**Figma design File**
 
 Click here: https://www.figma.com/file/4IbpmTU6jtpRKdpbFmt4i8/Web-Design-Movie-Dashboard-(Community)-(Copy)?node-id=1%3A2
 
-## Getting Started
+# Description
 
-First, run the development server:
+**Details**
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+MOVTIME movie application is an app where you will get information and images on the most trending, popular, top rated, simiar movies and Tv series all up to date. The application content is powered bt TMDB API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application let's you determine the movies you will love to see on your screen, which you can select from the navbar
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+![navbar]()
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+You can easily select between seeing all the movies and series, only movies or only Tv series. 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+After selecting what you will love to view, you get to see the full screen width backdrop image, name and genre of most popular movie/tv shows at the time.
 
-## Learn More
+![backdrop image]()
 
-To learn more about Next.js, take a look at the following resources:
+Then, you see the the movie/Tv series divided into different sections which are Popular, trending and top rated having the movies in them seperated using a slider. On each movie/Tv series slide, You can view the name, release year and the top genre. On mouse hover of the movie slide, you get to see the add to watchlist, rate move/Tv series and show more buttons respectively, you then see the age rating of the movie, the resolution type, and all the movie genre. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![slider image]() 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When you click on a movie slide or the show more button, you get to see a Modal that contains more information about the movie, which are the full width backdrop image, movie name, release year, overview, and similar movies
 
-## Deploy on Vercel
+![Modal image]()
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can Sign up and log in into the application but with your correct username, email and a 6 digit or above password
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Sign up]() ![Sign in]()
+
+**Technologies**
+
+Technologies i used to build this are  Next.js, Css, react-bootstrap, Swiper.js, Firebase, TMDB(The movie database) API
+
+I used Next.js framework to bootstrap this project because of the limitless functionalities and flexibilities it provides me, examples of the these are : 
+
+- server side rendering and static site generation, in such project that fetches lots of content from an APi at once, server side rendering will greatly improve performance
+- Redux toolkit hook which i used this to manage the state of some components in my application which includes the functioning navbar display and collapse, using Sign up/login information
+- Props to pass some data from component to component with ease.
+- Access to 3rd party libraries that make the app much experience better like Swiper.js for the sliders and react-bootstrap for the app layout and modals.
+- Css modules which prevent clashing of classnames around components therefore avoiding unwanted results
+
+**Challenges**
+
+The challenge i faced while building was making the application very performant and creating a good functioning loading state before the content displays.
+
+**Features to be added**
+
+I am yet to arrive at a version 1.0 but i hope to add this features in order to arrive at a steady working version
+
+- Having a watchlist page where logged in users can store movies they wish to watch in future
+- Creating a friends page (content undecided)
+- Creating a parties page (content undecided)
+- Create setting page where user can change username, password, and make some other changes.
+- Making the code more cleaner and readable.
+
+# Installation and Running
+
+git clone or pull the project using your terminal, open the project folder on your local laptop in a code editor and run "npm start" in your editors terminal.
+
+

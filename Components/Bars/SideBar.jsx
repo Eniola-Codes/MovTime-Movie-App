@@ -49,13 +49,6 @@ const sideBarOpen = showSideBar ? classes.sidebaropen : '';
                   Watchlist</span>
                 </a>
               </li>
-              <li>
-                <a href="/home">
-                  <FaCalendarAlt />
-
-                  <span>Coming soon</span>
-                </a>
-              </li>
             </ul>
           </div>
           <div className={classes.sidebar_section}>
