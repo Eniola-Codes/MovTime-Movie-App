@@ -3,9 +3,9 @@ import classes from '../../../styles/UiStyle/SwiperUiStyle/SwiperUiModal.module.
 import { Swiper } from "swiper/react";
 import "swiper/css";
 import { Navigation, Autoplay } from "swiper";
-import "swiper/css/autoplay";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
+// import "swiper/css/autoplay";
+// import "swiper/css/navigation";
+// import "swiper/css/effect-fade";
 
 const SwiperUiModal = (props) =>
 {

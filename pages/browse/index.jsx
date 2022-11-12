@@ -9,6 +9,7 @@ import TrendingMovies from "../../Components/BrowseComponents/Sections/TrendingM
 import TopRatedMovies from "../../Components/BrowseComponents/Sections/TopRatedMovies";
 import TopRatedTv from "../../Components/BrowseComponents/Sections/TopRatedTv";
 import PopularTv from "../../Components/BrowseComponents/Sections/PopularTv";
+import SwiperUi from "../../Components/Ui/SwiperUi/SwiperUi";
 
 //The popular movies Api
 const API_FEATURED_MOVIES = "https://api.themoviedb.org/3/movie/upcoming?api_key=63963159dae94bf1e30a674eee861084";
@@ -18,6 +19,7 @@ const Home = (props) => {
   let content;
 
   content = (
+    <>
     <SwiperUiHero>
       {/* mapping and displaying the section components which contains the layout */}
       {props.dataResults.map((movieDetails) => (
@@ -32,6 +34,7 @@ const Home = (props) => {
         </SwiperSlide>
       ))}
     </SwiperUiHero>
+      </>
   );
 
   return (
@@ -71,6 +74,7 @@ export const getStaticProps = async () => {
 
     //Shufffle my array of movies
     const dataResults = shuffleArray(data.results);
+  
 
     return {
       props: {
@@ -84,9 +88,10 @@ export const getStaticProps = async () => {
       },
       revalidate: 10,
     };
-  } catch (error) {
-    console.log('Something went wrong')
-  }
+  }  catch (error) {
+      console.log('Something went wrong')
+    }
+  
 };
 
 export default Home;
