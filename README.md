@@ -18,25 +18,25 @@ MOVTIME movie application is an app where you will get information and images on
 
 The application let's you determine the movies you will love to see on your screen, which you can select from the navbar
 
-![navbar]()
+![navbar](https://github.com/Eniola-Codes/MovTime-Movie-App/blob/main/public/Assets/Images/nav.png?raw=true)
 
 You can easily select between seeing all the movies and series, only movies or only Tv series. 
 
 After selecting what you will love to view, you get to see the full screen width backdrop image, name and genre of most popular movie/tv shows at the time.
 
-![backdrop image]()
+![backdrop image](https://github.com/Eniola-Codes/MovTime-Movie-App/blob/main/public/Assets/Images/backdrop.png?raw=true)
 
 Then, you see the the movie/Tv series divided into different sections which are Popular, trending and top rated having the movies in them seperated using a slider. On each movie/Tv series slide, You can view the name, release year and the top genre. On mouse hover of the movie slide, you get to see the add to watchlist, rate move/Tv series and show more buttons respectively, you then see the age rating of the movie, the resolution type, and all the movie genre. 
 
-![slider image]() 
+![slider image](https://github.com/Eniola-Codes/MovTime-Movie-App/blob/main/public/Assets/Images/slider.png?raw=true) 
 
 When you click on a movie slide or the show more button, you get to see a Modal that contains more information about the movie, which are the full width backdrop image, movie name, release year, overview, and similar movies
 
-![Modal image]()
+![Modal image](https://github.com/Eniola-Codes/MovTime-Movie-App/blob/main/public/Assets/Images/modal.png?raw=true)
 
 You can Sign up and log in into the application but with your correct username, email and a 6 digit or above password
 
-![Sign up]() ![Sign in]()
+![Sign up](https://github.com/Eniola-Codes/MovTime-Movie-App/blob/main/public/Assets/Images/signup.png?raw=true) ![Sign in](https://github.com/Eniola-Codes/MovTime-Movie-App/blob/main/public/Assets/Images/signin.png?raw=true)
 
 **Technologies**
 
